@@ -56,10 +56,11 @@ section {
 .header {
   width: 100%;
   padding: 1rem 10rem;
+  background-color: #002;
 }
 
 .header .logo {
-  height: 100px;
+  height: 60px;
 }
 
 .nav,
@@ -69,20 +70,23 @@ section {
   align-items: center;
 }
 
-.toggle-bar {
-  font-size: 3rem;
-  cursor: pointer;
-  display: none;
+.nav-link {
+  margin: 0 1rem;
+}
+
+.nav-link > a:hover {
+  color: #ffd;
+}
+
+.nav-link > a {
   color: #fff;
 }
 
-.nav-link {
-  margin: 0 2rem;
-  font-size: 1.3rem;
-}
-
-.nav-link a {
-  color: #002;
+.toggle-bar {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  color: #fff;
 }
 
 /* /header */
@@ -185,22 +189,33 @@ section {
     display: block;
   }
 
-  .nav {
-    flex-direction: column;
-    align-items: start;
+  .links-container {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
+
+  .show-links {
+    height: 200px;
+  }
+
   .nav-links {
-    position: absolute;
-    margin-top: 100px;
-    width: 100%;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 2rem;
   }
 
   .nav-link {
-    display: block;
-    margin: 1rem 0;
-    font-size: 1.5rem;
+    margin: 0.75rem 0;
+  }
+
+  .nav-link > a {
+    color: #fff;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: start;
   }
 }
 
