@@ -281,5 +281,15 @@ body {
   .nav-links {
     width: 90%;
   }
+
+  .nav-link {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+  }
 }
 /* /Media Queries */
