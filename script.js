@@ -5,14 +5,20 @@ const links = document.querySelector(".nav-links");
 const header = document.querySelector(".header");
 const topLink = document.querySelector(".top-link");
 const headerHeight = header.getBoundingClientRect().height;
+const linksHeight = links.getBoundingClientRect().height;
 
 // Toggle menu
 toggle.addEventListener("click", () => {
   const containerHeight = linksContainer.getBoundingClientRect().height;
-  const linksHeight = links.getBoundingClientRect().height;
   if (containerHeight === 0) {
     linksContainer.style.height = `${linksHeight}px`;
   } else {
+    linksContainer.style.height = 0;
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.screen.width > 768) {
     linksContainer.style.height = 0;
   }
 });
