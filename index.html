@@ -14,10 +14,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <link rel="stylesheet" href="style.css" />
     <script src="./script.js" defer></script>
   </head>
@@ -37,10 +37,18 @@
           </div>
           <div class="links-container">
             <ul class="nav-links">
-              <li class="nav-link"><a href="#main">Home</a></li>
-              <li class="nav-link"><a href="#about">About</a></li>
-              <li class="nav-link"><a href="#services">Services</a></li>
-              <li class="nav-link"><a href="#contact">Contact</a></li>
+              <li class="nav-link">
+                <a href="#main" class="scroll-link">Home</a>
+              </li>
+              <li class="nav-link">
+                <a href="#about" class="scroll-link">About</a>
+              </li>
+              <li class="nav-link">
+                <a href="#services" class="scroll-link">Services</a>
+              </li>
+              <li class="nav-link">
+                <a href="#contact" class="scroll-link">Contact</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -53,7 +61,9 @@
       <div class="main-content">
         <h1 class="main-title">Kitobxon Coder</h1>
         <p class="main-desc">Fast, reliable and effective solutions.</p>
-        <button type="button" class="btn services-btn">Explore Services</button>
+        <a href="#services" class="scroll-link explore-btn">
+          Explore Services
+        </a>
       </div>
     </section>
     <section class="about" id="about">

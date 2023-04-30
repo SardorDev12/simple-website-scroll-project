@@ -51,6 +51,25 @@ section {
   font-weight: 600;
 }
 
+.explore-btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1rem 1rem;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+}
+
+.explore-btn:hover {
+  border-color: #000;
+  background-color: orange;
+}
+
+.btn > a {
+  color: #fff;
+}
+
 /* header */
 body {
   position: relative;
@@ -62,6 +81,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  height: auto;
   padding: 1rem 10rem;
   background-color: #000;
 }
@@ -157,8 +177,11 @@ body {
 }
 
 .services-btn:hover {
-  color: #002;
   background-color: #ffa;
+}
+
+.services-btn:hover a {
+  color: #000;
 }
 /* /Main */
 /* About */
@@ -243,10 +266,6 @@ body {
     transition: all 0.3s ease-in-out;
   }
 
-  .show-links {
-    height: 200px;
-  }
-
   .nav-links {
     flex-direction: column;
     align-items: flex-start;
@@ -278,12 +297,16 @@ body {
     padding: 0;
   }
 
+  .main-title {
+    font-size: 3rem;
+  }
+
   .nav-links {
     width: 90%;
   }
 
   .nav-link {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .main-content {

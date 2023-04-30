@@ -4,10 +4,10 @@ const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".nav-links");
 const header = document.querySelector(".header");
 const topLink = document.querySelector(".top-link");
+const headerHeight = header.getBoundingClientRect().height;
 
 // Toggle menu
 toggle.addEventListener("click", () => {
-  console.log("clicked");
   const containerHeight = linksContainer.getBoundingClientRect().height;
   const linksHeight = links.getBoundingClientRect().height;
   if (containerHeight === 0) {
@@ -20,7 +20,6 @@ toggle.addEventListener("click", () => {
 // Fixed header
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
-  const headerHeight = header.getBoundingClientRect().height;
 
   if (scrollHeight > headerHeight) {
     header.classList.add("fixed-header");
@@ -38,6 +37,27 @@ window.addEventListener("scroll", () => {
     topLink.classList.remove("show-link");
   }
 });
+
+//Smooth scroll
+const scrollLinks = document.querySelectorAll(".scroll-link");
+scrollLinks.forEach((scrollLink) => {
+  scrollLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = e.currentTarget.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    const headerHeight = header.getBoundingClientRect().height;
+    const containerHeight = links.getBoundingClientRect().height;
+    const fixedHeader = header.classList.contains("fixed-header");
+
+    let position = element.offsetTop - headerHeight;
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+    linksContainer.style.height = 0;
+  });
+});
+
 // Dynamic footer year
 const yearEl = document.querySelector("#year");
 yearEl.innerHTML = new Date().getFullYear();
