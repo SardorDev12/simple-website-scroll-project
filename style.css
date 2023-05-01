@@ -304,6 +304,7 @@ body {
 
   .main-title {
     font-size: 4rem;
+    margin-top: 1rem;
   }
 
   .nav-links {
@@ -312,6 +313,10 @@ body {
 
   .nav-link {
     font-size: 2.5rem;
+  }
+
+  .main {
+    height: 80vh;
   }
 
   .main-content {
