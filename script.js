@@ -52,10 +52,13 @@ scrollLinks.forEach((scrollLink) => {
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
     const headerHeight = header.getBoundingClientRect().height;
-    const containerHeight = links.getBoundingClientRect().height;
-    const fixedHeader = header.classList.contains("fixed-header");
+    const containerHeight = linksContainer.getBoundingClientRect().height;
 
     let position = element.offsetTop - headerHeight;
+
+    if (headerHeight > 76) {
+      position += containerHeight;
+    }
     window.scrollTo({
       left: 0,
       top: position,
