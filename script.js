@@ -1,15 +1,14 @@
-// Elements
-const toggle = document.querySelector(".toggle-bar");
-const linksContainer = document.querySelector(".links-container");
-const links = document.querySelector(".nav-links");
-const header = document.querySelector(".header");
-const topLink = document.querySelector(".top-link");
-const headerHeight = header.getBoundingClientRect().height;
-const linksHeight = links.getBoundingClientRect().height;
+// Dynamic date - ✔
+const date = document.getElementById("year");
+date.innerText = new Date().getFullYear();
 
 // Toggle menu
+const linksContainer = document.querySelector(".links-container");
+const links = document.querySelector(".nav-links");
+const toggle = document.querySelector(".toggle-bar");
 toggle.addEventListener("click", () => {
   const containerHeight = linksContainer.getBoundingClientRect().height;
+  const linksHeight = links.getBoundingClientRect().height;
   if (containerHeight === 0) {
     linksContainer.style.height = `${linksHeight}px`;
   } else {
@@ -17,26 +16,17 @@ toggle.addEventListener("click", () => {
   }
 });
 
-window.addEventListener("resize", () => {
-  if (window.screen.width > 768) {
-    linksContainer.style.height = 0;
-  }
-});
-
 // Fixed header
+const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
-
+  const headerHeight = header.getBoundingClientRect().height;
   if (scrollHeight > headerHeight) {
     header.classList.add("fixed-header");
   } else {
     header.classList.remove("fixed-header");
   }
-});
-
-// Top Link btn
-window.addEventListener("scroll", () => {
-  const scrollHeight = window.pageYOffset;
+  const topLink = document.querySelector(".top-link");
   if (scrollHeight > 500) {
     topLink.classList.add("show-link");
   } else {
@@ -44,21 +34,16 @@ window.addEventListener("scroll", () => {
   }
 });
 
-//Smooth scroll
+// Smooth scroll
 const scrollLinks = document.querySelectorAll(".scroll-link");
+const headerHeight = header.getBoundingClientRect().height;
 scrollLinks.forEach((scrollLink) => {
   scrollLink.addEventListener("click", (e) => {
     e.preventDefault();
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
-    const headerHeight = header.getBoundingClientRect().height;
-    const containerHeight = linksContainer.getBoundingClientRect().height;
-
-    let position = element.offsetTop - headerHeight;
-
-    if (headerHeight > 76) {
-      position += containerHeight;
-    }
+    const position = element.offsetTop - headerHeight;
+    console.log(position);
     window.scrollTo({
       left: 0,
       top: position,
@@ -66,7 +51,3 @@ scrollLinks.forEach((scrollLink) => {
     linksContainer.style.height = 0;
   });
 });
-
-// Dynamic footer year
-const yearEl = document.querySelector("#year");
-yearEl.innerHTML = new Date().getFullYear();

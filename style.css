@@ -84,13 +84,13 @@ body {
   height: auto;
   padding: 1rem 10rem;
   background-color: #000;
+  color: #fff;
 }
 
 .fixed-header {
+  background-color: #000022;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
 }
 
 .header .logo {
@@ -114,7 +114,7 @@ body {
 }
 
 .nav-link > a:hover {
-  color: #995d2b;
+  color: #ffa;
 }
 
 .toggle-bar {
@@ -139,7 +139,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  filter: grayscale(0.75);
   z-index: -1;
   width: 100%;
   height: 100vh;
@@ -198,8 +197,8 @@ body {
 
 /* Top Link Btn */
 .top-link {
-  font-size: 2rem;
-  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.6rem 1rem;
   border-radius: 10px;
   color: #ffa;
   position: fixed;
@@ -221,7 +220,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -232,12 +231,17 @@ body {
 .footer {
   background-color: #002;
   color: #fff;
-  padding: 2rem 0;
+  padding: 5rem 0;
   text-align: center;
 }
 /* /Footer */
 
 /* Media Queries */
+@media only screen and (min-width: 768px) {
+  .links-container {
+    height: auto !important;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   html {
@@ -279,6 +283,7 @@ body {
   }
 
   .nav-link {
+    font-size: 2rem;
     margin: 0.75rem 0;
   }
 
@@ -309,10 +314,6 @@ body {
 
   .nav-links {
     width: 90%;
-  }
-
-  .nav-link {
-    font-size: 2.5rem;
   }
 
   .main {
